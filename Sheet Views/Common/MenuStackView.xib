@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina5_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MenuStackView" customModule="WalletUI" customModuleProvider="target">
+            <connections>
+                <outlet property="bottomOffset" destination="n10-xk-mNM" id="64E-rJ-ZB5"/>
+                <outlet property="leftOffset" destination="09Y-0D-Wqt" id="0nG-RY-Ire"/>
+                <outlet property="rightOffset" destination="sBO-6m-xDM" id="2d3-za-1MC"/>
+                <outlet property="stackView" destination="cuG-1W-kHH" id="Xoc-i3-zXg"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="ZAT-HJ-bzp">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cuG-1W-kHH">
+                    <rect key="frame" x="20" y="0.0" width="374" height="716"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="cuG-1W-kHH" firstAttribute="leading" secondItem="ZAT-HJ-bzp" secondAttribute="leading" constant="20" id="09Y-0D-Wqt"/>
+                <constraint firstItem="cuG-1W-kHH" firstAttribute="top" secondItem="ZAT-HJ-bzp" secondAttribute="top" id="Xj3-IP-3dR"/>
+                <constraint firstAttribute="bottom" secondItem="cuG-1W-kHH" secondAttribute="bottom" constant="20" id="n10-xk-mNM"/>
+                <constraint firstAttribute="trailing" secondItem="cuG-1W-kHH" secondAttribute="trailing" constant="20" id="sBO-6m-xDM"/>
+            </constraints>
+            <point key="canvasLocation" x="49.5" y="77.5"/>
+        </view>
+    </objects>
+</document>

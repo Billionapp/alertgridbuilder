@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SectionView" customModule="ActionSheetManager" customModuleProvider="target">
+            <connections>
+                <outlet property="stackView" destination="OqA-oU-12r" id="Vxp-du-AMX"/>
+                <outlet property="view" destination="iN0-l3-epB" id="7Ug-jA-sI6"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="OqA-oU-12r">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                </stackView>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="OqA-oU-12r" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="0Z8-df-qMY"/>
+                <constraint firstItem="OqA-oU-12r" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="4iw-HG-isE"/>
+                <constraint firstAttribute="bottom" secondItem="OqA-oU-12r" secondAttribute="bottom" id="D8l-1A-kZQ"/>
+                <constraint firstAttribute="trailing" secondItem="OqA-oU-12r" secondAttribute="trailing" id="c3X-Wq-bL8"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

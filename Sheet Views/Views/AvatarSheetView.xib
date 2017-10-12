@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AvatarSheetView" customModule="WalletUI" customModuleProvider="target">
+            <connections>
+                <outlet property="imageButton" destination="tcs-fk-f0R" id="Lk9-PK-2j7"/>
+                <outlet property="view" destination="iN0-l3-epB" id="IJ2-ga-ca1"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tcs-fk-f0R">
+                    <rect key="frame" x="1" y="1" width="373" height="373"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="tcs-fk-f0R" secondAttribute="height" multiplier="1:1" id="fGJ-3v-GYp"/>
+                    </constraints>
+                    <state key="normal" image="Avatar"/>
+                    <connections>
+                        <action selector="avatarPressed:" destination="-1" eventType="touchUpInside" id="57U-wH-lec"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="tcs-fk-f0R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="1" id="00p-OZ-033"/>
+                <constraint firstItem="tcs-fk-f0R" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="1" id="CJo-o5-f1Z"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="tcs-fk-f0R" secondAttribute="bottom" constant="1" id="P9p-Cx-LfB"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="tcs-fk-f0R" secondAttribute="trailing" constant="1" id="xMH-xA-Tps"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="Avatar" width="62" height="62"/>
+    </resources>
+</document>
