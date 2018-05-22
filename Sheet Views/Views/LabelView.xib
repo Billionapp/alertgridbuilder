@@ -1,17 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LabelView" customModule="WalletUI" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LabelView" customModule="BillionWallet" customModuleProvider="target">
             <connections>
+                <outlet property="heightConstraint" destination="rK2-in-aOb" id="9Qn-gw-eBL"/>
                 <outlet property="label" destination="aBA-6o-0GY" id="8Vs-4F-N8J"/>
+                <outlet property="leftConstraint" destination="Yv8-jd-FT1" id="DpS-1E-qwU"/>
+                <outlet property="rightConstraint" destination="lHU-gv-HUV" id="rpf-wj-dzS"/>
                 <outlet property="view" destination="iN0-l3-epB" id="ths-Vu-mCR"/>
                 <outlet property="widthConstraint" destination="CPY-Iw-hSV" id="Vvb-Qy-6pn"/>
             </connections>
@@ -22,9 +25,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBA-6o-0GY">
-                    <rect key="frame" x="0.0" y="13" width="375" height="185"/>
+                    <rect key="frame" x="20" y="13" width="335" height="185"/>
                     <constraints>
                         <constraint firstAttribute="width" priority="999" constant="335" id="CPY-Iw-hSV"/>
+                        <constraint firstAttribute="height" priority="999" constant="185" id="rK2-in-aOb"/>
                     </constraints>
                     <string key="text">Balance Private Footer Address Pairing Wallet
 Generator Displayed Keep Never It Secret</string>
@@ -36,9 +40,10 @@ Generator Displayed Keep Never It Secret</string>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="aBA-6o-0GY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="13" id="4FL-mc-XRs"/>
+                <constraint firstItem="aBA-6o-0GY" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Fwh-7t-dVR"/>
                 <constraint firstAttribute="bottom" secondItem="aBA-6o-0GY" secondAttribute="bottom" constant="13" id="RDA-L6-oKh"/>
-                <constraint firstItem="aBA-6o-0GY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Yv8-jd-FT1"/>
-                <constraint firstAttribute="trailing" secondItem="aBA-6o-0GY" secondAttribute="trailing" id="lHU-gv-HUV"/>
+                <constraint firstItem="aBA-6o-0GY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Yv8-jd-FT1"/>
+                <constraint firstAttribute="trailing" secondItem="aBA-6o-0GY" secondAttribute="trailing" constant="20" id="lHU-gv-HUV"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="55.5" y="-737.5"/>

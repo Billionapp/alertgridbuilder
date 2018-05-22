@@ -14,5 +14,7 @@ struct Theme {
         static let separator = UIColor(white: 0, alpha: 0.5)
         static let red = UIColor(red: 255/255, green: 59/255, blue: 48/255, alpha: 1.0)
         static let green = UIColor(red: 76/255, green: 217/255, blue: 100/255, alpha: 1)
+        static let amountBorder = UIColor(red: 95/255, green: 106/255, blue: 137/255, alpha: 0.8)
+        static let selected = UIColor(red: 75/255, green: 83/255, blue: 106/255, alpha: 1.0)
     }
 }

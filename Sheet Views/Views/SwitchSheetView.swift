@@ -14,6 +14,7 @@ class SwitchSheetView: SheetView {
 
     @IBOutlet weak var titleButton: UIButton!
     @IBOutlet weak var switchControl: UISwitch!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     @IBAction func titleButtonPressed(_ sender: UIButton) {
         ViewAction(.click, sender: self).invoke()
@@ -31,6 +32,7 @@ extension SwitchSheetView: Configurable {
     func configure(with info: Info) {
         titleButton.setTitle(info.title, for: .normal)
         switchControl.isOn = info.isOn
+        heightConstraint.constant = BuilderDevice.screen.height
     }
     
 }

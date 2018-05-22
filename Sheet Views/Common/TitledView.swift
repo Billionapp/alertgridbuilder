@@ -31,7 +31,15 @@ class TitledView: LoadableFromXibView {
     }
     
     init() {
-        super.init(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 100))
+        let y: CGFloat = BuilderDevice.isIPhoneX ? 8 : 0
+        super.init(frame: CGRect(x: 0, y: y, width: UIScreen.main.bounds.width, height: 100))
+        
+        if BuilderDevice.isIphoneSE {
+            let font = titleLabel.font!
+            titleLabel.font = UIFont(name: font.fontName, size: font.lineHeight - 10)
+            let subtitleFont = subtitleLabel.font!
+            subtitleLabel.font = UIFont(name: subtitleFont.fontName, size: subtitleFont.lineHeight - 3)
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {

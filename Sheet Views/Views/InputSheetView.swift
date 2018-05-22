@@ -50,6 +50,7 @@ extension InputSheetView: Configurable {
         textField.text = info.text
         textField.isUserInteractionEnabled = info.editable
         textField.textColor = info.editable ? UIColor.white : UIColor.white.withAlphaComponent(0.5)
+        textField.autocapitalizationType = .words
     }
     
 }

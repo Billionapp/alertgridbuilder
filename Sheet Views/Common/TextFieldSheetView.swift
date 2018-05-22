@@ -25,7 +25,6 @@ class TextFieldSheetView: SheetView {
                 textView.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.regular)
                 placeholder.font = UIFont.systemFont(ofSize: 18, weight: UIFont.Weight.regular)
                 separatorView.isHidden = false
-                view.backgroundColor = .clear
             })
         }
     }
@@ -50,6 +49,7 @@ class TextFieldSheetView: SheetView {
         placeholderLabel.textColor = textView.textColor?.withAlphaComponent(0.5)
         placeholderLabel.isHidden = !textView.text.isEmpty
         textView.becomeFirstResponder()
+        view.backgroundColor = .clear
     }
 
 }
@@ -63,7 +63,8 @@ extension TextFieldSheetView: UITextViewDelegate {
         
         let size = textView.sizeThatFits(CGSize(width: textView.frame.size.width, height: .greatestFiniteMagnitude))
         if size.height != textViewHeightConstraint.constant && size.height > textView.frame.size.height {
-            textViewHeightConstraint.constant = size.height
+            let newTextViewHeight = UIDevice.current.model == .iPhoneX ? size.height + 5 : size.height
+            textViewHeightConstraint.constant = newTextViewHeight
             textView.setContentOffset(.zero, animated: false)
         }
         ViewAction(.change, sender: self, userInfo: ["text": textView.text]).invoke()

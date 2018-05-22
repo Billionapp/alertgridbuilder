@@ -28,7 +28,7 @@ extension ColumnsView: Configurable {
     func configure(with info: Info) {
         
         info.containers.forEach {
-            $0.view.layer.cornerRadius = 20
+            $0.view.layer.cornerRadius = BuilderDevice.screen.cornerRadius
             $0.view.layer.masksToBounds = true
         }
         

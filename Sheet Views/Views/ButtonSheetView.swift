@@ -53,10 +53,14 @@ class ButtonSheetView: SheetView {
         super.xibSetup()
         titleButton.titleLabel?.textAlignment = .center
         titleButton.titleLabel?.lineBreakMode = .byCharWrapping
+        
+        let backgroundImage = UIImage(color: UIColor.white.withAlphaComponent(0.5))
+        titleButton.setBackgroundImage(backgroundImage, for: .highlighted)
     }
 
     @IBOutlet weak var titleButton: UIButton!
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var heightConstraint: NSLayoutConstraint!
     
     // MARK: - Actions
     @IBAction func buttonPressed(_ sender: UIButton) {
@@ -80,9 +84,13 @@ extension ButtonSheetView: Configurable {
         
         titleButton.setTitle(info.title, for: .normal)
         
+        heightConstraint.constant = BuilderDevice.screen.height
+        
         if let selected = info.selected {
             imageView.isHidden = !selected
         }
+        
+        titleButton.accessibilityIdentifier = info.title
     }
     
 } 

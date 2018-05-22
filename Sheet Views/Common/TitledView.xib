@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TitledView" customModule="WalletUI" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TitledView" customModule="BillionWallet" customModuleProvider="target">
             <connections>
                 <outlet property="closeButton" destination="hv8-uf-4YI" id="mal-yp-4on"/>
                 <outlet property="subtitleLabel" destination="5lK-CK-74D" id="3wS-rH-gQm"/>
@@ -23,22 +23,25 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NfA-Bb-msz">
-                    <rect key="frame" x="20" y="35" width="0.0" height="0.0"/>
+                    <rect key="frame" x="20" y="31" width="291" height="32"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="32" id="Iay-Zy-LiP"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="32"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lK-CK-74D">
-                    <rect key="frame" x="20" y="53" width="300" height="0.0"/>
+                    <rect key="frame" x="20" y="68" width="303" height="14"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="300" id="Frf-D8-nV1"/>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="14" id="2Uw-ww-SXW"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
                     <color key="textColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hv8-uf-4YI">
-                    <rect key="frame" x="321" y="38" width="44" height="44"/>
+                    <rect key="frame" x="321" y="28" width="44" height="44"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="44" id="Kd3-Qr-HjT"/>
                         <constraint firstAttribute="height" constant="44" id="TPx-78-5KB"/>
@@ -53,10 +56,12 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="hv8-uf-4YI" secondAttribute="trailing" constant="20" id="AwW-du-DKJ"/>
                 <constraint firstItem="NfA-Bb-msz" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="NXX-jO-eRu"/>
-                <constraint firstItem="hv8-uf-4YI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="38" id="eCx-dz-ge6"/>
-                <constraint firstItem="NfA-Bb-msz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="35" id="gB2-9l-3MI"/>
+                <constraint firstItem="5lK-CK-74D" firstAttribute="trailing" secondItem="NfA-Bb-msz" secondAttribute="trailing" constant="12" id="ZUZ-hj-8NL"/>
+                <constraint firstItem="hv8-uf-4YI" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="eCx-dz-ge6"/>
+                <constraint firstItem="NfA-Bb-msz" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="31" id="gB2-9l-3MI"/>
                 <constraint firstItem="5lK-CK-74D" firstAttribute="leading" secondItem="NfA-Bb-msz" secondAttribute="leading" id="ggA-AO-7Ui"/>
-                <constraint firstItem="5lK-CK-74D" firstAttribute="top" secondItem="NfA-Bb-msz" secondAttribute="bottom" constant="18" id="mys-Xv-FjE"/>
+                <constraint firstItem="5lK-CK-74D" firstAttribute="top" secondItem="NfA-Bb-msz" secondAttribute="bottom" constant="5" id="mys-Xv-FjE"/>
+                <constraint firstItem="hv8-uf-4YI" firstAttribute="leading" secondItem="NfA-Bb-msz" secondAttribute="trailing" constant="10" id="oLO-df-3id"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="39.5" y="-231"/>

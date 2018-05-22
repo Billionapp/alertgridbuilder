@@ -10,17 +10,34 @@ import UIKit
 
 class SectionView: LoadableFromXibView {
     
-    @IBOutlet weak var stackView: UIStackView! {
-        didSet {
-            dataManager = StackViewDataManager(stackView: stackView)
-            viewCustomizations()
-        }
-    }
+    @IBOutlet weak var stackView: UIStackView!
     fileprivate var dataManager: StackViewDataManager!
     
+    var gradientLayer: CALayer?
+    
+    override func layoutSublayers(of layer: CALayer) {
+        super.layoutSublayers(of: layer)
+        self.gradientLayer?.frame = self.bounds
+    }
+    
+    override func xibSetup() {
+        super.xibSetup()
+        dataManager = StackViewDataManager(stackView: stackView)
+        viewCustomizations()
+        setupGradient()
+    }
+    
     func viewCustomizations() {
-        layer.cornerRadius = 20
+        layer.cornerRadius = BuilderDevice.screen.cornerRadius
         layer.masksToBounds = true
+    }
+    
+    fileprivate func setupGradient() {
+        backgroundColor = .clear
+        let colorLeft = Color.buttonTop
+        let colorRight = Color.buttonBottom
+        gradientLayer = applyGradient([colorLeft, colorRight], locations: [0, 1])
+        layer.insertSublayer(gradientLayer!, at: 0)
     }
 }
 

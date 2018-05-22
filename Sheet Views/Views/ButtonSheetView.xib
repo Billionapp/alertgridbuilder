@@ -1,16 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ButtonSheetView" customModule="WalletUI" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ButtonSheetView" customModule="BillionWallet" customModuleProvider="target">
             <connections>
+                <outlet property="heightConstraint" destination="vtF-K6-aXT" id="kXQ-kY-Xqr"/>
                 <outlet property="imageView" destination="XsG-jE-hjT" id="AIr-9r-7Jg"/>
                 <outlet property="titleButton" destination="GHR-AT-DeI" id="BCP-OS-Xb9"/>
             </connections>
@@ -20,13 +21,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHR-AT-DeI">
-                    <rect key="frame" x="16" y="0.0" width="343" height="59"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GHR-AT-DeI">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ButtonSheetViewButton"/>
                     <constraints>
                         <constraint firstAttribute="height" priority="999" constant="59" id="vtF-K6-aXT"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="59" id="yEr-4n-KgD"/>
+                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="70" id="yEr-4n-KgD"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                    <inset key="contentEdgeInsets" minX="16" minY="0.0" maxX="16" maxY="0.0"/>
                     <state key="normal">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
@@ -44,8 +47,8 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="GHR-AT-DeI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="2Qc-Yt-Yas"/>
-                <constraint firstAttribute="trailing" secondItem="GHR-AT-DeI" secondAttribute="trailing" constant="16" id="8f4-kc-kvK"/>
+                <constraint firstItem="GHR-AT-DeI" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="2Qc-Yt-Yas"/>
+                <constraint firstAttribute="trailing" secondItem="GHR-AT-DeI" secondAttribute="trailing" id="8f4-kc-kvK"/>
                 <constraint firstItem="XsG-jE-hjT" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="B8v-t1-f7w"/>
                 <constraint firstAttribute="bottom" secondItem="GHR-AT-DeI" secondAttribute="bottom" id="Elj-Dq-OOf"/>
                 <constraint firstAttribute="trailing" secondItem="XsG-jE-hjT" secondAttribute="trailing" constant="16" id="joj-0S-tCD"/>

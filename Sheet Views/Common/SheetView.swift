@@ -10,18 +10,13 @@ import UIKit
 
 class SheetView: LoadableFromXibView {
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        customizations()
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-    }
-    
     func customizations() {
-        view.backgroundColor = Theme.Color.gray
         addSeparator()
+    }
+    
+    override func xibSetup() {
+        super.xibSetup()
+        customizations()
     }
     
     func addSeparator() {

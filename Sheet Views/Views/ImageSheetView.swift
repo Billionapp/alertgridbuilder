@@ -20,14 +20,19 @@ class ImageSheetView: LoadableFromXibView {
         }
     }
     
+    @IBOutlet weak var tapGesture: UITapGestureRecognizer!
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var imageConstraint: NSLayoutConstraint!
     
     override func xibSetup() {
         super.xibSetup()
         view.backgroundColor = .clear
+        tapGesture.addTarget(self, action: #selector(click))
     }
     
+    @objc func click() {
+        ViewAction(.click, sender: self).invoke()
+    }
 }
 
 // MARK: - Configurable
@@ -38,5 +43,4 @@ extension ImageSheetView: Configurable {
         imageView.image = model.image
         imageConstraint.constant = model.height ?? 140
     }
-    
 }

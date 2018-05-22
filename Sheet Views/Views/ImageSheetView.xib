@@ -1,19 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageSheetView" customModule="WalletUI" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ImageSheetView" customModule="BillionWallet" customModuleProvider="target">
             <connections>
                 <outlet property="imageConstraint" destination="jMg-LX-t7v" id="YRZ-oI-r2C"/>
                 <outlet property="imageView" destination="nho-h0-soL" id="HeH-Ze-1DY"/>
+                <outlet property="tapGesture" destination="PEX-6C-chv" id="L6x-kb-Luy"/>
                 <outlet property="view" destination="OcH-ET-I4c" id="2SB-12-j0Y"/>
             </connections>
         </placeholder>
@@ -22,12 +23,15 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="210"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nho-h0-soL">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nho-h0-soL">
                     <rect key="frame" x="137" y="35" width="140" height="140"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="nho-h0-soL" secondAttribute="height" multiplier="1:1" id="fq3-Vm-DvM"/>
                         <constraint firstAttribute="height" constant="140" id="jMg-LX-t7v"/>
                     </constraints>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="PEX-6C-chv" appends="YES" id="CTy-9g-lBM"/>
+                    </connections>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,5 +44,6 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="22" y="133"/>
         </view>
+        <tapGestureRecognizer id="PEX-6C-chv"/>
     </objects>
 </document>

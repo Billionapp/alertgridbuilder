@@ -9,49 +9,6 @@
 import UIKit
 
 class MenuStackView: LoadableFromXibView {
-    
-    enum Device {
-        case seven
-        case sevenPlus
-        case five
-        case four
-        
-        static var screen: Device {
-            let width = UIScreen.main.bounds.size.width
-            let height = UIScreen.main.bounds.size.height
-            if width == 375 {
-                return .seven
-            } else if width == 414 {
-                return .sevenPlus
-            } else if height == 568 {
-                return .five
-            } else {
-                return .four
-            }
-        }
-        
-        var offset: CGFloat {
-            switch self {
-            case .seven:
-                return 16
-            case .sevenPlus:
-                return 20
-            case .five, .four:
-                return 10
-            }
-        }
-        
-        var spacing: CGFloat {
-            switch self {
-            case .seven:
-                return 12
-            case .sevenPlus:
-                return 16
-            case .five, .four:
-                return 10
-            }
-        }
-    }
 
     var bottomConstraint: NSLayoutConstraint?
     var heightConstraint: NSLayoutConstraint?
@@ -73,9 +30,13 @@ class MenuStackView: LoadableFromXibView {
     override func xibSetup() {
         super.xibSetup()
         
-        [bottomOffset, leftOffset, rightOffset].forEach { $0?.constant = Device.screen.offset }
+        [bottomOffset, leftOffset, rightOffset].forEach { $0?.constant = BuilderDevice.screen.offset }
         
-        stackView.spacing = Device.screen.spacing
+        if BuilderDevice.isIPhoneX {
+            bottomOffset.constant = 18
+        }
+        
+        stackView.spacing = BuilderDevice.screen.spacing
         view.backgroundColor = .clear
         backgroundColor = .clear
         
@@ -94,7 +55,7 @@ class MenuStackView: LoadableFromXibView {
     }
     
     func resize(in parentView: UIView) {
-        let scrollViewHeight = stackView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height + Device.screen.offset
+        let scrollViewHeight = stackView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height + BuilderDevice.screen.offset
         let constraints = attachToBottom(parentView, height: scrollViewHeight, bottomOffset: keyboardHeight ?? 0)
         bottomConstraint = constraints.0
         heightConstraint = constraints.1
@@ -102,7 +63,7 @@ class MenuStackView: LoadableFromXibView {
     }
     
     func updateSize(in parentView: UIView) {
-        let scrollViewHeight = stackView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height + Device.screen.offset
+        let scrollViewHeight = stackView.systemLayoutSizeFitting(UILayoutFittingCompressedSize).height + BuilderDevice.screen.offset
         heightConstraint?.constant = scrollViewHeight
         bottomConstraint?.constant = -(keyboardHeight ?? 0)
         parentView.layoutIfNeeded()
